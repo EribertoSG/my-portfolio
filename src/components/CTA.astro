@@ -1,0 +1,17 @@
+---
+interface Props {
+  text: string;
+  // svg
+  svg?: string;
+}
+const { text, svg } = Astro.props as Props;
+---
+
+<button class="button-cta" id="button-cta">
+  <span>
+    {text}
+  </span>
+  <span class="svg-icon-container">
+    <img src={svg} alt="SVG Icon" class="svg-icon" />
+  </span>
+</button>

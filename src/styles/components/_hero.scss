@@ -1,0 +1,83 @@
+@use '../variables/variables' as variable;
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero_content {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__introduce-myself {
+    font-size: variable.$font-xxxl;
+    color: variable.$primary-text-color;
+    text-align: center;
+}
+
+.hero___my-name {
+    color: variable.$accent-color;
+}
+
+.hero__profession {
+    margin-top: 1rem;
+    font-size: variable.$font-xl;
+}
+
+.hero__cta-container {
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: variable.$screen-sm) {
+    .hero__introduce-myself {
+        font-size: variable.$font-xxxxl;
+    }
+
+    .hero__profession {
+        font-size: variable.$font-xxl;
+    }
+
+}
+
+@media screen and (min-width: variable.$screen-lg) {
+    .hero {
+        flex-direction: row;
+    }
+
+    .hero_content {
+        margin-top: 0;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .hero__introduce-myself {
+        font-size: variable.$font-xxxxl;
+        text-align: start;
+    }
+
+    .hero__profession {
+        font-size: variable.$font-xxl;
+    }
+
+}
+
+@media screen and (min-width: variable.$screen-xl) {
+    .hero__introduce-myself {
+        font-size: variable.$font-xxxxxl
+    }
+
+    .hero__cta-container {
+        margin-top: 4rem;
+    }
+
+    .hero___image {
+        position: relative;
+        min-width: 490px;
+    }
+}
