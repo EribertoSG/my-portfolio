@@ -5,7 +5,7 @@
 }
 
 .button-icon:hover .svg-icon {
-  animation: diagonal-move 0.6s linear infinite alternate;
+  animation: diagonal-move 0.3s linear infinite alternate;
   animation-fill-mode: none; 
 }
 @keyframes diagonal-move {

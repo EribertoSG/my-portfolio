@@ -44,7 +44,7 @@
     display: none;
 }
 
-@media screen and (min-width: variable.$screen-sm) {
+@media screen and (min-width: variable.$screen-lg) {
     .navbar{
         position: relative;
         align-items: end;
