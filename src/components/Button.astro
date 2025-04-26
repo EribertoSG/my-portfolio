@@ -1,0 +1,18 @@
+---
+interface Props {
+  text: string;
+  // svg
+  svg?: string;
+}
+
+const { text, svg } = Astro.props as Props;
+---
+<a href="" class="item button-icon" id="button-icon">
+    <span>
+      {text}
+    </span>
+    <span class="svg-icon-container">
+      <img src={svg} alt="SVG Icon" class="svg-icon" />
+    </span>
+</a>
+

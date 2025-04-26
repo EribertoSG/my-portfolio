@@ -1,0 +1,80 @@
+@use '../variables/variables' as variable;
+
+.navbar{
+    position: fixed;
+    z-index: 10; 
+    bottom: 0;
+    left: 0;
+    background-color: rgba($color: variable.$primary-color, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    height: variable.$header-height-sm;
+    font-size: variable.$font-sm;
+}
+
+.nav{ 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.item{
+    position: relative;
+    margin-right: 16px;
+    z-index: 1;
+}
+
+.item:last-child {
+    background-color: variable.$border-color; // Fondo para el último item
+    margin-right: 0;
+    padding: 0.5rem 1rem;
+    border-radius: variable.$border-radius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hover-box{
+    display: none;
+}
+
+@media screen and (min-width: variable.$screen-sm) {
+    .navbar{
+        position: relative;
+        align-items: end;
+        height: variable.$header-height;
+        font-size: variable.$font-base;
+    }
+    
+    .item{
+        margin-right: 2rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .item:last-child {
+        background-color: transparent;
+    }
+
+    .item:hover{
+        color: variable.$accent-color-text;
+    }
+    
+    .hover-box {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        z-index: 0;
+        border-radius: 8px;
+        background-color: variable.$border-color;
+    }
+}

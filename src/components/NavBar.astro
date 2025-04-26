@@ -1,0 +1,49 @@
+---
+import Button from "./Button.astro";
+---
+
+<!-- Creame un header bien estructurado con 4 items  centrado -->
+<header class="navbar">
+  <nav class="nav">
+    <div class="hover-box" id="hoverBox"></div>
+    <a href="#" class="item">About me</a>
+    <a href="#" class="item">Skills</a>
+    <a href="#" class="item">Projects</a>
+    <Button  text="CV" svg="/icons/basic/arrow-up-right-24.svg" />
+  </nav>
+</header>
+
+<script is:inline>
+  window.addEventListener("load", () => {
+    const hoverBox = document.getElementById("hoverBox");
+    const links = document.querySelectorAll("nav .item");
+    const nav = document.querySelector("nav");
+
+    // Último item (por ejemplo, Projects)
+    const lastLink = links[links.length - 1];
+
+    const setHoverBox = (link) => {
+      const rect = link.getBoundingClientRect();
+      const navRect = link.parentElement.getBoundingClientRect();
+      hoverBox.style.width = `${rect.width}px`;
+      hoverBox.style.left = `${rect.left - navRect.left}px`;
+    };
+
+    if (hoverBox && links.length) {
+      // Mostrar el hoverBox en el último ítem al cargar
+      setHoverBox(lastLink);
+
+      links.forEach(link => {
+        link.addEventListener("mouseenter", () => {
+          setHoverBox(link);
+        });
+      });
+
+      // Detectar cuando el mouse sale completamente del nav
+      nav.addEventListener("mouseleave", () => {
+        setHoverBox(lastLink); // Volver al último item
+      });
+    }
+  });
+</script>
+
