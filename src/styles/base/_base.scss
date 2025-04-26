@@ -1,0 +1,63 @@
+@use '../variables/variables' as variable;
+
+@font-face {
+    font-family: 'Cascadia Code';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/CascadiaCode-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Cascadia Code';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/CascadiaCode-SemiBold.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Cascadia Code';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/CascadiaCode-Bold.woff2') format('woff2');
+}
+
+html, body {
+    margin:0px; 
+    padding:0px;
+    font-family: 'Cascadia Code', sans-serif;
+    font-size: 16px;
+    background-color:variable.$primary-color;
+    color: variable.$primary-text-color;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: variable.$secondary-text-color;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+

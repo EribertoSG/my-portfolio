@@ -1,0 +1,42 @@
+$header-height: 88px; // 64px
+$header-height-sm: 64px; // 64px
+
+$primary-color: #0D0D0D;
+$secondary-color: #1F1F1F;
+
+$primary-text-color: #EAEAEA;
+$secondary-text-color: #B0B0B0;
+
+$accent-color: #F4A259;
+$accent-color-text: #f7eee6;
+$border-color: #2E2E2E;
+$shadow-color: rgb(46, 46, 46, 0.5);
+
+$font-family: 'Cascadia Code', sans-serif;
+
+$font-sm: 0.875rem; // 14px
+$font-base: 1rem; // 16px
+$font-lg: 1.125rem; // 18px
+$font-xl: 1.25rem; // 20px
+$font-xxl: 1.5rem; // 24px
+$font-xxxl: 2rem; // 32px
+$font-xxxxl: 3rem; // 48px
+$font-xxxxxl: 4rem; // 64px
+$font-biggest: 4.75rem; // 76px
+
+$border-radius: 0.5rem; // 8px
+
+
+// responsive
+$screen-xs: 420px;
+$screen-sm: 640px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1280px;
+$screen-xxl: 1536px;
+
+//z-index 
+$z-index-default: 0;
+$z-index-sm: 10;
+$z-index-md: 100;
+$z-index-lg:1000;
