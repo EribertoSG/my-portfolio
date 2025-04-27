@@ -1,0 +1,13 @@
+@use "../variables/variables" as variable;
+
+.subtitle {
+    font-size: variable.$font-xxxl;
+
+    @media screen and (min-width: variable.$screen-sm) {
+        font-size: variable.$font-xxxxl;
+    }
+
+    @media screen and (min-width: variable.$screen-lg) {
+        font-size: variable.$font-xxxxxl;
+    }
+}
