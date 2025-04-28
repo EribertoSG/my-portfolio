@@ -1,0 +1,112 @@
+---
+import SkillsCard from "./SkillsCard.astro";
+import SkillCard from "./SkillCard.astro";
+import Subtitle from "./Subtitle.astro";
+
+const skillsFrontend = [
+  {
+    name: "js",
+    icon: "/icons/tech/frontend/js.svg",
+  },
+  {
+    name: "ts",
+    icon: "/icons/tech/frontend/ts.svg",
+  },
+  {
+    name: "html",
+    icon: "/icons/tech/frontend/html.svg",
+  },
+  {
+    name: "css",
+    icon: "/icons/tech/frontend/css.svg",
+  },
+  {
+    name: "sass",
+    icon: "/icons/tech/frontend/sass.svg",
+  },
+  {
+    name: "react",
+    icon: "/icons/tech/frontend/reactjs.svg",
+  },
+  {
+    name: "astrojs",
+    icon: "/icons/tech/frontend/astrojs.svg",
+  },
+  {
+    name: "tailwind",
+    icon: "/icons/tech/frontend/tailwind.svg",
+  },
+];
+
+const skillsBackend = [
+  {
+    name: "nodejs",
+    icon: "/icons/tech/backend/nodejs.svg",
+  },
+  {
+    name: "bunjs",
+    icon: "/icons/tech/backend/bunjs.svg",
+  },
+];
+
+const skillsDatabase = [{ name: "psql", icon: "/icons/tech/db/psql.png" }];
+const skillsTools = [
+  {
+    name: "git",
+    icon: "/icons/tech/tools/git.svg",
+  },
+  {
+    name: "github",
+    icon: "/icons/tech/tools/github.svg",
+  },
+  {
+    name: "figma",
+    icon: "/icons/tech/tools/figma.svg",
+  },
+  {
+    name: "linux",
+    icon: "/icons/tech/tools/linux.svg",
+  },
+];
+---
+
+<section class="skills">
+  <Subtitle text="Skills" />
+  <div class="skills-container">
+    <SkillsCard>
+      {
+        skillsFrontend.map((skill) => (
+          <SkillCard name={skill.name} icon={skill.icon} />
+        ))
+      }
+    </SkillsCard>
+    <SkillsCard>
+      {
+        skillsBackend.map((skill) => (
+          <SkillCard name={skill.name} icon={skill.icon} />
+        ))
+      }
+      <div class="skill-card">
+        <p class="skill-others">Others</p>
+      </div>
+    </SkillsCard>
+    <SkillsCard>
+      {
+        skillsTools.map((skill) => (
+          <SkillCard name={skill.name} icon={skill.icon} />
+        ))
+      }
+    </SkillsCard>
+    <SkillsCard>
+      {
+        skillsDatabase.map((skill) => (
+            <SkillCard
+              name={skill.name}
+              icon={skill.icon}
+              className="psql-icon"
+            />
+        ))
+      }
+    </SkillsCard>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+---
+    interface Props {
+            name: string;
+            icon: string;
+            className?: string; 
+    }
+
+    const {name, icon, className} = Astro.props;
+---
+
+<div class="skill-card">
+    <img src={icon} alt={name} class={`${className}`} />
+</div>
