@@ -1,0 +1,98 @@
+@use "../variables/variables" as variable;
+
+.projects {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.projects_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & p {
+        text-align: center;
+    }
+}
+
+.projects__container {
+    margin-top: 2rem;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* Define 3 columnas */
+    grid-template-rows: repeat(auto-fit, minmax(326px, 1fr));
+    /* Filas automáticas con un mínimo de 326px */
+    gap: 1rem;
+    /* Espacio entre las tarjetas (opcional, ajusta según necesites) */
+}
+
+.card {
+    min-height: 396px;
+    max-height: 396px;
+    background-color: variable.$secondary-color;
+    border-radius: variable.$border-radius;
+}
+
+.card___img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card__header {
+    overflow: hidden;
+}
+
+.card___img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: variable.$border-radius;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card__body {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.card___name {
+    margin: 0.5rem 0;
+    font-size: variable.$font-base;
+    font-weight: 600;
+    color: variable.$primary-text-color;
+}
+
+.card___description {
+    font-size: variable.$font-sm;
+    font-weight: 400;
+    color: variable.$secondary-text-color;
+}
+
+@media screen and (min-width: variable.$screen-md) {
+    .projects__container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Define 2 columnas */
+    }
+
+    .card {
+        min-height: 438px;
+        max-height: 438px;
+    }
+}
+
+@media screen and (min-width: variable.$screen-lg) {
+    .projects__container {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 2rem;
+        /* Define 4 columnas */
+    }
+}
+
+@media screen and (min-width: variable.$screen-xl) {
+
+    .card {
+        min-height: 396px;
+        max-height: 396px;
+    }
+}

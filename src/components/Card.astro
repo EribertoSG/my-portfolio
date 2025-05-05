@@ -1,0 +1,23 @@
+---
+import SmallCard from "./SmallCard.astro";
+
+interface CardProps {
+  name: string;
+  description: string;
+  imgSrc: string;
+}
+const { name, description, imgSrc } = Astro.props as CardProps;
+---
+
+<article class="card">
+  <a href="#">
+    <div class="card__header">
+      <img src={imgSrc} alt={name} class="card___img" />
+    </div>
+  </a>
+  <div class="card__body">
+    <a href="#"><h3 class="card___name">{name}</h3></a>
+    <p class="card___description">{description}</p>
+  </div>
+  <slot />
+</article>

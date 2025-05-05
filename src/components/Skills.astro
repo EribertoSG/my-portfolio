@@ -70,8 +70,15 @@ const skillsTools = [
 ];
 ---
 
-<section class="skills">
-  <Subtitle text="Skills" />
+<section class="skills" id="skills">
+  <div class="skills_header">
+    <Subtitle text="Habilidades" />
+    <p>
+      Estas son algunas de las tecnologías con las que he trabajado. Me gusta
+      aprender y experimentar con nuevas herramientas, así que siempre estoy
+      abierto a explorar nuevas tecnologías y enfoques.
+    </p>
+  </div>
   <div class="skills-container">
     <SkillsCard>
       {
@@ -100,11 +107,11 @@ const skillsTools = [
     <SkillsCard>
       {
         skillsDatabase.map((skill) => (
-            <SkillCard
-              name={skill.name}
-              icon={skill.icon}
-              className="psql-icon"
-            />
+          <SkillCard
+            name={skill.name}
+            icon={skill.icon}
+            className="psql-icon"
+          />
         ))
       }
     </SkillsCard>

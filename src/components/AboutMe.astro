@@ -2,28 +2,36 @@
 import Subtitle from "./Subtitle.astro";
 ---
 
-<section class="about-me">
-  <Subtitle text="About me" />
+<section class="about-me" id="about-me">
+  <div class="about-me_header">
+    <Subtitle text="Este soy yo" />
+    <p>
+      Me dedico al desarrollo web porque es la forma en la que puedo convertir ideas o problemas en soluciones útiles y fáciles de usar para las personas.
+    </p>
+  </div>
   <div class="about-me__content">
-    <div>
-        <p class="about-me__text">
-          Hi, I'm <span class="about-me___my-name">Eriberto Santos</span>, a web developer interested in creating useful
-          solutions for people and communities. I enjoy working with technologies
-          like React, Next.js, Node.js, and PostgreSQL.
-        </p>
-        <p class="about-me__text">
-          I enjoy learning new things and applying my knowledge to impactful
-          projects, especially in the fields of ecotourism and local development.
+    <div class="about-me___container-first">
+      <div class="about-me___item">
+        <h3>Antecedentes</h3>
+        <p>
+          Soy Eriberto Santos, desarrollador web con más de un año y medio de experiencia en la creación de aplicaciones funcionales y accesibles. He desarrollado una plataforma para promover sitios ecoturísticos en la Mixteca de Oaxaca, así como una app móvil para gestión de productos. Mis proyectos buscan siempre generar valor real. Combino tecnología con propósito para resolver necesidades concretas.
         </p>
       </div>
-      <p class="about-me__text">
-        I consider myself responsible, creative, and eager to continue growing in
-        the world of web development. I also have experience using tools like Git,
-        GitHub, and Linux to work in an organized and efficient manner.
-      </p>
-      <p class="about-me__text">
-        Ready to take the next step in your project? Contact me by <a href="#" class="about-me___whatsapp">WhatsApp</a> or any
-        of my social networks.
-      </p>
+      <div class="about-me___item">
+        <h3>Educación</h3>
+        <p>
+          Cursé la carrera de Ingeniería en Tecnologías de la Información y Comunicaciones en el ITSMIGRA, donde estoy en proceso de titulación. Durante mi formación adquirí habilidades sólidas en desarrollo web, bases de datos y herramientas modernas. También trabajé con metodologías ágiles. Esta base me permite afrontar proyectos reales con enfoque técnico y práctico.
+        </p>
+      </div>
+      <div class="about-me___item">
+        <h3>Interes</h3>
+        <p>
+          Me gusta mantenerme en constante aprendizaje. Actualmente me estoy formando en tecnologías como Bun.js y Flutter. Disfruto experimentar con nuevas herramientas de desarrollo y diseño. Además, me motiva crear tecnología que tenga impacto social, sobre todo en comunidades rurales o en sectores poco digitalizados.
+        </p>
+      </div>
+    </div>
+    <div class="about-me___container-second">
+      <img src="/im.png" alt="im" class="about-me___im" />
+    </div>
   </div>
 </section>

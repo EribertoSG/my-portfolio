@@ -1,0 +1,56 @@
+---
+import { getCollection } from "astro:content";
+import Subtitle from "./Subtitle.astro";
+import Card from "./Card.astro";
+import SmallCard from "./SmallCard.astro";
+
+const projects = await getCollection("projects");
+---
+
+<section class="projects" id="projects">
+  <div class="projects_header">
+    <Subtitle text="Proyectos" />
+    <p>
+      Estos son algunos de mis proyectos más destacados. Cada uno refleja mi
+      compromiso con la calidad y la funcionalidad.
+    </p>
+  </div>
+  <div class="projects__container">
+    {
+      projects.map((project) => {
+        return (
+          <Card
+            name={project.data.name}
+            description={project.data.description}
+            imgSrc={project.data.imgs[0]}
+          >
+            <div class="small-card_container">
+              {project.data.tecnologies.map((tecnology) => {
+                return (
+                  <SmallCard
+                    src={tecnology}
+                    alt={tecnology.split("/")[tecnology.split("/").length - 1]}
+                  />
+                );
+              })}
+            </div>
+          </Card>
+        );
+      })
+    }
+  </div>
+</section>
+
+<script is:inline>
+  window.addEventListener("load", () => {
+    const smallCard = document.querySelectorAll(".small-card");
+    const limit = 3;
+    if (smallCard.length > limit) {
+      smallCard.forEach((sc, item) => {
+        if (item > limit) {
+          sc.style.display = "none";
+        }
+      });
+    }
+  });
+</script>

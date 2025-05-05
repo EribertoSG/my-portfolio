@@ -1,0 +1,25 @@
+@use "../variables/variables" as variable;
+
+.small-card_container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.8rem;
+    margin: 0 1rem;
+}
+
+.small-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid variable.$border-color;
+    border-radius: variable.$border-radius;
+    padding: 0.5rem 1rem;
+}
+
+.small-card__img {
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+}
+
