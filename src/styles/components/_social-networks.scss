@@ -1,0 +1,57 @@
+@use "../variables/variables" as variable;
+
+.social-networks {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .social-networks {
+        display: inline-flex;
+    }
+}
+
+.social-networks {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 32px;
+
+    @media screen and (min-width: 768px) {
+        position: fixed;
+        height: calc(100% - 6rem);
+        top: 6rem;
+        flex-direction: column;
+        left: 1rem;
+        width: auto;
+        margin: 0;
+    }
+}
+
+.social-networks_content {
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.social-networks_line-one,
+.social-networks_line-two {
+    height: 2px;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+        height: 100%;
+        width: 2px;
+    }
+}
+
+.social-networks_line-one {
+    background: linear-gradient(-45deg, variable.$accent-color, variable.$primary-color 90%);
+}
+
+.social-networks_line-two {
+    background: linear-gradient(-45deg, variable.$primary-color 10%, variable.$accent-color 90%);
+}

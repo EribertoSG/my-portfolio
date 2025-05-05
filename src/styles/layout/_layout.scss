@@ -2,15 +2,15 @@
 
 .layout {
     padding: 0 8px;
-    margin-bottom: variable.$header-height;
 }
 
 @media screen and (min-width: variable.$screen-xs) {
     .layout {
         padding: 0 1rem;
     }
-    
+
 }
+
 @media screen and (min-width: variable.$screen-sm) {
     .layout {
         padding: 0 4rem;
