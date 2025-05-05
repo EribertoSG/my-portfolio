@@ -6,10 +6,10 @@ import Button from "./Button.astro";
 <header class="navbar">
   <nav class="nav">
     <div class="hover-box" id="hoverBox"></div>
-    <a href="#" class="item">About me</a>
-    <a href="#" class="item">Skills</a>
-    <a href="#" class="item">Projects</a>
-    <Button  text="CV" svg="/icons/basic/arrow-up-right-24.svg" />
+    <a href="#about-me" class="item">Conoceme</a>
+    <a href="#skills" class="item">Habilidades</a>
+    <a href="#projects" class="item">Proyectos</a>
+    <Button text="CV" svg="/icons/basic/arrow-up-right-24.svg" />
   </nav>
 </header>
 
@@ -33,7 +33,7 @@ import Button from "./Button.astro";
       // Mostrar el hoverBox en el último ítem al cargar
       setHoverBox(lastLink);
 
-      links.forEach(link => {
+      links.forEach((link) => {
         link.addEventListener("mouseenter", () => {
           setHoverBox(link);
         });
@@ -45,5 +45,36 @@ import Button from "./Button.astro";
       });
     }
   });
-</script>
 
+  // Mostrar/ocultar navbar al hacer scroll
+  let lastScroll = window.scrollY;
+  const header = document.querySelector(".navbar");
+  const nav = document.querySelector("nav");
+  const items = document.querySelectorAll(".item");
+
+  items.forEach((item) => {
+    item.addEventListener("click", () => {
+      // Espera ~800ms para que el scroll suave termine
+      setTimeout(() => {
+        header.classList.add("hide"); // Oculta el navbar como si el usuario bajara
+      }, 800); // Ajusta este tiempo si tu scroll es más rápido o lento
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > lastScroll && currentScroll > 50) {
+      // Scroll hacia abajo
+      header.classList.add("hide");
+    } else {
+      // Scroll hacia arriba
+      header.classList.remove("hide");
+      // header.style.alignItems = "center";
+      nav.style.transform = "translateY(6%)";
+    }
+    lastScroll = currentScroll;
+    if (lastScroll < 50) {
+      nav.style.transform = "translateY(40%)";
+    }
+  });
+</script>

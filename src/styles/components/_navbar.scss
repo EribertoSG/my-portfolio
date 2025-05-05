@@ -1,9 +1,9 @@
 @use '../variables/variables' as variable;
 
-.navbar{
+.navbar {
     position: fixed;
-    z-index: 10; 
-    bottom: 0;
+    z-index: 10;
+    top: 0;
     left: 0;
     background-color: rgba($color: variable.$primary-color, $alpha: 0.5);
     display: flex;
@@ -14,9 +14,10 @@
     width: 100%;
     height: variable.$header-height-sm;
     font-size: variable.$font-sm;
+    transition: transform 0.3s ease;
 }
 
-.nav{ 
+.nav {
     position: relative;
     display: flex;
     align-items: center;
@@ -24,7 +25,7 @@
     width: 100%;
 }
 
-.item{
+.item {
     position: relative;
     margin-right: 16px;
     z-index: 1;
@@ -40,31 +41,41 @@
     align-items: center;
 }
 
-.hover-box{
+.hover-box {
     display: none;
 }
 
+// ocultar y mostrar el navbar cuando se hace scroll
+.navbar.hide {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.nav {
+    transform: translateY(40%);
+    transition: transform 0.3s cubic-bezier(.2, -0.49, .77, .74);
+}
+
 @media screen and (min-width: variable.$screen-lg) {
-    .navbar{
-        position: relative;
-        align-items: end;
+    .navbar {
         height: variable.$header-height;
         font-size: variable.$font-base;
+        transition: transform 0.3s ease;
     }
-    
-    .item{
+
+    .item {
         margin-right: 2rem;
         padding: 0.5rem 1rem;
     }
-    
+
     .item:last-child {
         background-color: transparent;
     }
 
-    .item:hover{
+    .item:hover {
         color: variable.$accent-color-text;
     }
-    
+
     .hover-box {
         display: flex;
         position: absolute;
