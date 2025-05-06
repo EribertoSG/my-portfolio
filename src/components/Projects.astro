@@ -23,6 +23,8 @@ const projects = await getCollection("projects");
             name={project.data.name}
             description={project.data.description}
             imgSrc={project.data.imgs[0]}
+            route={`/projects/${project.slug}`}
+            slug={project.slug}
           >
             <div class="small-card_container">
               {project.data.tecnologies.map((tecnology) => {
@@ -40,17 +42,3 @@ const projects = await getCollection("projects");
     }
   </div>
 </section>
-
-<script is:inline>
-  window.addEventListener("load", () => {
-    const smallCard = document.querySelectorAll(".small-card");
-    const limit = 3;
-    if (smallCard.length > limit) {
-      smallCard.forEach((sc, item) => {
-        if (item > limit) {
-          sc.style.display = "none";
-        }
-      });
-    }
-  });
-</script>

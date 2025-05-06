@@ -7,11 +7,11 @@ interface Props {
 const { text, svg } = Astro.props as Props;
 ---
 
-<button class="button-cta" id="button-cta">
+<a class="button-cta" id="button-cta" href="https://wa.me/9531596121" rel="nofallow" target="_blank">
   <span>
     {text}
   </span>
   <span class="svg-icon-container">
     <img src={svg} alt="SVG Icon" class="svg-icon" />
   </span>
-</button>
+</a>

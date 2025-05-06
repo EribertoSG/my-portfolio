@@ -1,0 +1,165 @@
+@use '../variables/variables' as variable;
+
+.id-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.id-page_header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.id-page_information {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+
+    & .author {
+        margin-top: 1rem;
+        font-size: variable.$font-sm;
+    }
+
+    margin-bottom: 1rem;
+}
+
+.id-page_information-text {
+    & .name-app {
+        font-size: variable.$font-xl;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: variable.$accent-color;
+    }
+
+    & .description {
+        font-size: variable.$font-sm;
+        color: variable.$secondary-text-color;
+    }
+}
+
+.id-page_small-card {
+    margin: 0;
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: variable.$border-radius;
+    overflow: hidden;
+    border: 1px solid variable.$border-color;
+
+
+    & img {
+        display: block;
+        object-fit: cover;
+    }
+
+    margin-bottom: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content {
+    background-color: variable.$secondary-color;
+    padding: .5rem;
+    border-radius: variable.$border-radius;
+
+    & h2 {
+        font-size: variable.$font-lg;
+        margin-bottom: .25rem;
+    }
+
+    & p {
+        font-size: variable.$font-sm;
+        line-height: 1.5;
+    }
+
+    & ul,
+    ol {
+        font-size: variable.$font-sm;
+        color: variable.$secondary-text-color;
+    }
+
+}
+
+.id-page_view-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: .5rem 1rem;
+    border: 1px solid variable.$border-color;
+    border-radius: variable.$border-radius;
+    z-index: variable.$z-index-sm;
+    background-color: rgba($color: variable.$primary-color, $alpha: 0.5);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+@media screen and (min-width: variable.$screen-lg) {
+    .id-page_header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .id-page_information {
+
+
+        & .author {
+            font-size: variable.$font-base;
+        }
+
+    }
+
+    .id-page_information-text {
+        & .name-app {
+            font-size: variable.$font-xxxl;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        & .description {
+            font-size: variable.$font-base;
+        }
+    }
+
+    .content {
+        background-color: variable.$secondary-color;
+        padding: .5rem;
+        border-radius: variable.$border-radius;
+
+        & h2 {
+            font-size: variable.$font-xl;
+        }
+
+        & p {
+            font-size: variable.$font-base;
+            margin-bottom: 1rem;
+        }
+
+        & ul,
+        ol {
+            font-size: variable.$font-base;
+        }
+
+    }
+
+}

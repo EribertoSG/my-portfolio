@@ -30,7 +30,9 @@
 
 .card {
     min-height: 396px;
+    max-width: 396px;
     max-height: 396px;
+    overflow: hidden;
     background-color: variable.$secondary-color;
     border-radius: variable.$border-radius;
 }
@@ -61,6 +63,10 @@
     font-size: variable.$font-base;
     font-weight: 600;
     color: variable.$primary-text-color;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .card___description {

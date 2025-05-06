@@ -1,0 +1,63 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import BackButton from "../../components/BackButton.astro";
+import SmallCard from "../../components/SmallCard.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { id: project.slug },
+    props: { project },
+  }));
+}
+const { project } = Astro.props;
+const { data, slug } = project;
+const { name, description, imgs, tecnologies, author, url} = data;
+const { Content } = await render(project);
+---
+
+<Layout title={name}>
+  <main class="id-page">
+    <div>
+      <BackButton />
+    </div>
+    <div class="id-page_container">
+      <div class="id-page_header">
+        <div class="id-page_information">
+          <div class="id-page_information-text">
+            <h1 class="name-app">{name}</h1>
+            <p class="description">{description}</p>
+          </div>
+          <div class="small-card_container id-page_small-card">
+            {
+              tecnologies.map((tecnology) => (
+                <SmallCard
+                  src={tecnology}
+                  alt={tecnology.split("/")[tecnology.split("/").length - 1]}
+                />
+              ))
+            }
+          </div>
+          <p class="author"><span>Autor: </span>{author}</p>
+        </div>
+        <div class="img-container">
+          <a href={url} class="id-page_view-button" target="_blank" rel="noopener noreferrer">
+            <span>Visita esta app</span>
+            <span>
+              <img src="/icons/basic/arrow-up-right-24.svg" alt="view app">
+            </span>
+
+          </a>
+          <img transition:name={slug} src={imgs[0]} alt={name} />
+        </div>
+      </div>
+
+      <div class="content">
+        <Content />
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
