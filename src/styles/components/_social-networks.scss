@@ -1,17 +1,17 @@
 @use "../variables/variables" as variable;
 
-.social-networks {
+.know-me {
     display: none;
-    z-index: 1000;
+    z-index: variable.$z-index-lg;
 }
 
 @media screen and (min-width: 768px) {
-    .social-networks {
+    .know-me {
         display: inline-flex;
     }
 }
 
-.social-networks {
+.know-me {
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
@@ -29,7 +29,7 @@
     }
 }
 
-.social-networks_content {
+.know-me_content {
     display: flex;
     align-items: center;
 
@@ -38,8 +38,8 @@
     }
 }
 
-.social-networks_line-one,
-.social-networks_line-two {
+.know-me_line-one,
+.know-me_line-two {
     height: 2px;
     width: 100%;
 
@@ -49,10 +49,10 @@
     }
 }
 
-.social-networks_line-one {
+.know-me_line-one {
     background: linear-gradient(-45deg, variable.$accent-color, variable.$primary-color 90%);
 }
 
-.social-networks_line-two {
+.know-me_line-two {
     background: linear-gradient(-45deg, variable.$primary-color 10%, variable.$accent-color 90%);
 }
